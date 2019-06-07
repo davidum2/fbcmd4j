@@ -29,14 +29,38 @@ import facebook4j.auth.AccessToken;
 
 public class Fbcmd4j {
 
-	static final Logger logger = LogManager.getLogger(Facebook.class);
-	private static String appId = "304222873824632";
-	private static String appSecret= "7ba79824a1f0505ec56a010b1f35623b";
-	private static Scanner scan;
+	static final Logger logger = LogManager.getLogger(Facebook.class);//se establece la conexion con el log
+
+	private static String appId = "304222873824632";                      //id de facebook
+	private static String appSecret= "7ba79824a1f0505ec56a010b1f35623b";  //id secreto
+	private static Scanner scan;											//se establece un objeto del tipo escaner que sera utilizado por todo el programa
 
 	
 	public static void main(String[] args) throws FacebookException {
 		// TODO Auto-generated method stub
+		
+		Facebook facebook = new FacebookFactory().getInstance(); //se crea el objeto facebook de la libreria Facebook
+		facebook.setOAuthAppId(appId, appSecret);                //se envia el id y el secret para el acceso
+		facebook.getOAuthAppAccessToken();							//se solicita el acceso por tooken
+		
+		try {
+			
+			try {
+				 } catch (InputMismatchException ex) {
+					System.out.println("Ocurrió un errror, favor de revisar log.");
+					logger.catching(ex);
+				 } catch (FacebookException ex) {
+					System.out.println("Ocurrió un errror, favor de revisar log.");
+					logger.catching(ex);
+						} catch (Exception ex) {
+						System.out.println("Ocurrió un error, favor de revisar log.");
+						logger.catching(ex);
+			}
+	
 
+	} catch (Exception e) {
+
+
+	}
 	}
 }
