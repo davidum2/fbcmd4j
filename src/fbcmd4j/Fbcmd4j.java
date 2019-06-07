@@ -45,16 +45,49 @@ public class Fbcmd4j {
 		
 		try {
 			
-			try {
-				 } catch (InputMismatchException ex) {
-					System.out.println("Ocurrió un errror, favor de revisar log.");
-					logger.catching(ex);
-				 } catch (FacebookException ex) {
-					System.out.println("Ocurrió un errror, favor de revisar log.");
-					logger.catching(ex);
-						} catch (Exception ex) {
-						System.out.println("Ocurrió un error, favor de revisar log.");
-						logger.catching(ex);
+			scan = new Scanner(System.in);
+			while(true) {
+				
+				System.out.println("Bienvenido a Facebook \n\n"
+								+  "Opciones: \n"
+								+  "(1) NewsFeed \n"
+								+  "(2) Wall \n"
+								+  "(3) Publicar Estado \n"
+								+  "(4) Publicar Link \n"
+								+  "(5) Salir \n"
+								+  "\nPor favor ingrese una opción:");
+				try {
+						option = scan.nextInt();
+						scan.nextLine();
+						switch (option) {
+						
+					case 1:
+						
+						break;
+					case 2:
+						System.out.println("Mostrando Wall...");
+						System.out.println(facebook.getHome());
+						break;
+					case 3:
+						System.out.println("Escribe tu estado: ");
+						String estado = scan.nextLine();
+						facebook.postStatusMessage(estado);
+						break;
+					case 4:
+						System.out.println("Ingresa el link: ");
+						System.out.println("describa su link");
+						String descripcion = scan.nextLine();
+						System.out.println("ingrese la url de su link");
+						URL url = new URL(scan.nextLine()); 
+						facebook.postLink(descripcion, url);
+				
+												
+					case 5:
+						System.out.println("Gracias por usar el cliente!");
+						System.exit(0);
+						break;
+					default:
+						break;
 			}
 	
 
