@@ -60,10 +60,12 @@ public class Fbcmd4j {
 										switch (option) { 
 										
 									case 1:
-										System.out.println("Mostrando NewsFeed...");
-										System.out.println(facebook.getActivities());
+										System.out.println("Mostrando NewsFeed..."); 
+										System.out.println(facebook.getActivities()); //se muestra las newsfeed a traves del metodo del objeto facebook
 										break;
 									case 2:
+										System.out.println("Mostrando Wall...");
+										System.out.println(facebook.getHome()); //se muestra el muro a traves del metodo del objeto facebook
 										break;
 									case 3:
 										break;
