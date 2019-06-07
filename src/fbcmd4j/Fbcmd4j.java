@@ -68,6 +68,9 @@ public class Fbcmd4j {
 										System.out.println(facebook.getHome()); //se muestra el muro a traves del metodo del objeto facebook
 										break;
 									case 3:
+										System.out.println("Escribe tu estado: ");
+										String estado = scan.nextLine();
+										facebook.postStatusMessage(estado); //se publica un estado a traves del metodo del objeto facebook
 										break;
 									case 4:
 										break;						
