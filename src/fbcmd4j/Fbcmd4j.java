@@ -73,8 +73,16 @@ public class Fbcmd4j {
 										facebook.postStatusMessage(estado); //se publica un estado a traves del metodo del objeto facebook
 										break;
 									case 4:
+										System.out.println("Ingresa el link: ");
+										System.out.println("describa su link");
+										String descripcion = scan.nextLine();
+										System.out.println("ingrese la url de su link");
+										URL url = new URL(scan.nextLine()); 
+										facebook.postLink(descripcion, url); //se comparte un link
 										break;						
 									case 5:
+										System.out.println("Gracias por su visita");
+										System.exit(0);
 										break;
 									default:
 										break;
