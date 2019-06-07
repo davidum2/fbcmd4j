@@ -8,3 +8,4 @@ Uso
 Crèditos
 
 Licencia
+libre
